@@ -12,7 +12,10 @@ import { ServicesComponent } from './services/services.component';
 import { SeoComponent } from './seo/seo.component';
 import { PpcComponent } from './ppc/ppc.component';
 import { AnimationComponent } from './animation/animation.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PipeComponent } from './pipe/pipe.component';
+import { SquareRootPipe } from './pipes/square-root.pipe';
+import { MultiplyPipe } from './pipes/multiply.pipe'
 
 
 
@@ -33,6 +36,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'animation', component: AnimationComponent,  },
+  { path: 'pipe', component: PipeComponent,  },
   
 
 
@@ -50,7 +54,10 @@ const appRoutes: Routes = [
     ServicesComponent,
     SeoComponent,
     PpcComponent,
-    AnimationComponent
+    AnimationComponent,
+    PipeComponent,
+    SquareRootPipe,
+    MultiplyPipe
   ],
   imports: [
     BrowserModule,
