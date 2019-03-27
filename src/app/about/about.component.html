@@ -1,0 +1,9 @@
+<h1>About Page</h1>
+
+
+<br><br>
+<button (click)="addItem()">Add</button>
+<button (click)="removeItem()">Remove</button>
+<ul [@queryAnimation]="items.length">
+  <li *ngFor="let item of items"> {{item}} </li>
+</ul>

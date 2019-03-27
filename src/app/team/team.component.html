@@ -1,0 +1,35 @@
+<p>
+  team works!
+</p>
+
+<input #myService (keyup.enter)="addServices(myService.value)" placeholder="Add Service"/>
+
+<ul>
+  <li *ngFor="let service of services; let i = index"> {{i+1}} - {{service}}</li>
+</ul>
+{{services[3]}}
+<h2>Personal info</h2>
+<div>Name: {{persoalInfo.firstName}}</div>
+<div>Email: {{persoalInfo.email}}</div>
+<div>Phone: {{persoalInfo.phone}}</div>
+
+<h2>Comapny Info {{companyDepartment.length}}</h2>
+<table border="1" cellspecing="0">
+  <tr>
+    <th>Department</th>
+    <th>Team Head</th>
+    <th>Total</th>  
+    <th>Status</th>
+    <th>Time</th>
+  </tr>
+  <tr *ngFor="let department of companyDepartment ; let i = index">
+    <td>{{department.department}}</td>
+    <td>{{department.teamHead}}</td>
+    <td>{{department.employeeTotal}}</td>  
+    <td>{{department.status.value}}</td>  
+    <td>{{department.status.time}}</td>      
+  </tr>
+</table>
+
+<h2>Our Socail service</h2>
+<div *ngFor="let service of arrayInfo.programing">{{service}}</div>

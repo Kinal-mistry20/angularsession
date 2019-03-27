@@ -1,0 +1,30 @@
+<button (click)="howAreYou()" >How are you?</button>
+<button (click)="whatIsYourName()" >What is your name?</button>
+<h1>{{value}}</h1>
+<br>
+
+<button (click)="userData('My name is John', '20')" >What is your name?</button>
+
+<h1 *ngIf="status" > Name :  {{userName}} Age: {{userAge}}  </h1>
+<br>
+
+<button (click)="clickMe()" [ngClass]="{'active': toggle }" >Click Me</button>
+<div [ngClass]="{'current': toggle }"  >Toggle</div>
+
+
+<br>
+
+<input #keyUpId  (keyup)="keyUp(keyUpId.value)" placeholder="on key" />
+{{getKeyValue}}
+<br>
+<input #keyEnterId 
+    (keyup.enter)="keyEnter(keyEnterId.value); keyEnterId.value='' " 
+    (blur)="keyEnter(keyEnterId.value) " 
+    
+    
+    placeholder="on enter" />
+{{getKeyEnterValue}}
+
+
+
+

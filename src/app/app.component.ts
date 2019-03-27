@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-project';
+  title : string = 'Designers';
+  value : any = 23
+
+  customers = [
+    {
+      name : "Sandesh",
+      lastName : "Garate"
+    },
+    {
+      name : "Vikas",
+      lastName : "Hiray"
+    }
+
+  ];
+
+
 }
+

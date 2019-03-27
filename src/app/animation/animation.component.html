@@ -1,0 +1,56 @@
+
+<button (click)="clickMe()">Click Me</button>
+<div [@myAnimation] *ngIf="status" >
+  animation works!
+</div>
+<br><br>
+
+
+<button (click)="keyFrameAnimation()">Click Me</button>
+<div [@keyframe] *ngIf="keyFrameStatus" >
+  keyframe animation works!
+</div>
+
+<br><br>
+
+
+
+<button (click)="slideAnimation()">Click Me</button> 
+<div [@slideToggle]="slideState" class="slide">
+  <h3>Slide Me</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+</div>
+<br><br>
+
+<button (click)="removeItem()">Remove</button>
+<ul [@queryAnimation]="items.length">
+  <li *ngFor="let item of items"> {{item}} </li>
+</ul>
+
+<br><br>
+<ul [@queryCustomAnimation]>
+  <li class="animate" > Animate 1 </li>
+  <li class="animate"> Animate 2 </li>
+  <li class="animate"> Animate 3 </li>
+</ul>
+
+<br><br>
+
+<button (click)="lightRoomAnimation()">Click Me</button> 
+<div [@lightroom]="switchState" class="slide">
+  <h3>Slide Me</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+</div>
+
+<br><br>
+
+<button (click)="fadeAnimation()">{{fadeState}}</button> 
+<div 
+  [@fadeAnimation]="fadeState ? 'fadeIn' : 'fadeOut'"
+  (@fadeAnimation.start)="fadeAnimationStart($event)"
+  (@fadeAnimation.done)="fadeAnimationDone($event)"
+
+
+> 
+  Fade animation works! 
+</div>
