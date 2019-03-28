@@ -15,8 +15,9 @@ import { AnimationComponent } from './animation/animation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipeComponent } from './pipe/pipe.component';
 import { SquareRootPipe } from './pipes/square-root.pipe';
-import { MultiplyPipe } from './pipes/multiply.pipe'
-
+import { MultiplyPipe } from './pipes/multiply.pipe';
+import { FormComponent } from './form/form.component'
+import{FormsModule} from '@angular/forms'
 
 
 const appRoutes: Routes = [
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   },
   { path: 'animation', component: AnimationComponent,  },
   { path: 'pipe', component: PipeComponent,  },
+  { path: 'form', component: FormComponent,  },
   
 
 
@@ -57,13 +59,16 @@ const appRoutes: Routes = [
     AnimationComponent,
     PipeComponent,
     SquareRootPipe,
-    MultiplyPipe
+    MultiplyPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-     RouterModule.forRoot(appRoutes)
+     RouterModule.forRoot(appRoutes),
+     FormsModule
+
   ],
   providers: [colors, chartColor],
   bootstrap: [AppComponent]

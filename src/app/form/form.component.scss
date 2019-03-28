@@ -1,0 +1,4 @@
+input{ width: 500px; padding: 10px; background: #f5f5f5; border: 1px solid }
+input.ng-valid{border: 1px solid green }
+input.ng-invalid{border: 1px solid red }
+.error{width: 500px;  padding: 10px; background: rgba(255,0,0,.1); color: red} 

@@ -1,0 +1,29 @@
+<h1>Simple Form</h1>
+<label for=""> First Name</label><br>
+<input type="text" 
+required
+ngModel
+pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+minlength="5"
+#firstName="ngModel"
+name="firstName"
+/>
+<div class="error" *ngIf="firstName.touched && !firstName.valid">
+  <div *ngIf="firstName.errors.required">First Name is required.</div>
+  <div *ngIf="firstName.errors.minlength">Minimum {{firstName.errors.minlength.requiredLength}} characters required.</div>
+  <div *ngIf="firstName.errors.pattern">Please enter the valid email ID</div>
+</div>
+<br>
+<label for="">Phone Number</label><br>
+<input type="text" 
+required
+ngModel
+maxlength="10"
+pattern="^[0-9]{10}$"
+#phoneNumber="ngModel"
+name="phoneNumber"
+/>
+<div class="error" *ngIf="phoneNumber.touched && !phoneNumber.valid">
+
+  <div *ngIf="phoneNumber.errors.pattern">Please enter the valid Phone Number</div>
+</div>
