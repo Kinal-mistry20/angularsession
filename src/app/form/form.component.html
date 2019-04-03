@@ -1,9 +1,10 @@
 <h1>Simple Form</h1>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
 <label for=""> First Name</label><br>
 <input type="text" 
 required
 ngModel
-pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+(change)="getData(firstName)"
 minlength="5"
 #firstName="ngModel"
 name="firstName"
@@ -11,7 +12,7 @@ name="firstName"
 <div class="error" *ngIf="firstName.touched && !firstName.valid">
   <div *ngIf="firstName.errors.required">First Name is required.</div>
   <div *ngIf="firstName.errors.minlength">Minimum {{firstName.errors.minlength.requiredLength}} characters required.</div>
-  <div *ngIf="firstName.errors.pattern">Please enter the valid email ID</div>
+
 </div>
 <br>
 <label for="">Phone Number</label><br>
@@ -22,8 +23,65 @@ maxlength="10"
 pattern="^[0-9]{10}$"
 #phoneNumber="ngModel"
 name="phoneNumber"
+(change)="getData(phoneNumber)"
 />
 <div class="error" *ngIf="phoneNumber.touched && !phoneNumber.valid">
-
+  <div *ngIf="phoneNumber.errors.required">Please enter  Phone Number</div>
   <div *ngIf="phoneNumber.errors.pattern">Please enter the valid Phone Number</div>
 </div>
+<br>
+  <button [disabled]="!userForm.valid">Submit</button>
+ <pre> {{submitFormData | json}}</pre>
+</form>
+
+
+<!--
+<div class="form_wrapper" >
+  <form  [formGroup]="userForm"  (ngSubmit)="onSubmit()">
+  <h3>Pesonal Information</h3>
+  <div class="form_control">
+    <label>Name</label>
+    <input type="text" name="name" formControlName="name">
+    <div class="error">
+Error
+    </div>
+  </div>
+
+  <div class="form_control">
+    <label>Email</label>
+    <input type="text" formControlName="email">
+  </div>
+
+  <h3>Address</h3>
+  <div class="Form_Group" formGroupName="address">
+
+    <div class="form_control">
+      <label>Street</label>
+      <input type="text" formControlName="street">
+    </div>
+
+    <div class="form_control">
+      <label>City</label>
+      <input type="text" formControlName="city">
+    </div>
+
+    <div class="form_control">
+      <label>Postal Code</label>
+      <input type="text" formControlName="postalcode">
+  
+    </div>
+
+</div>
+
+<div class="form_control">
+  <button   >Submit</button>
+
+
+</div>
+</form>
+
+</div>
+-->
+
+
+

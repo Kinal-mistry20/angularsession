@@ -1,0 +1,50 @@
+<div class="form_wrapper" >
+  <form  [formGroup]="userform" (ngSubmit)="onSubmit()" >
+  <h3>Personal Information</h3>
+  <div class="form_control">
+    <label>Name</label>
+    <input type="text" name="name" formControlName="name" >
+    <div class="error"  *ngIf="userform.controls['name'].touched" >
+      <div *ngIf="userform.controls['name'].hasError('required')" >Please enter your First Name </div>
+      <div *ngIf="userform.controls['name'].hasError('minlength')" >Minimun 4 characters </div>
+    </div>
+  </div>
+
+  <div class="form_control">
+    <label>Email</label>
+    <input type="text" formControlName="email" >
+  </div>
+
+  <h3>Address</h3>
+  <div class="Form_Group" formGroupName="address">
+
+    <div class="form_control" >
+      <label>Street</label>
+      <input type="text" formControlName="street" >
+    </div>
+
+    <div class="form_control" >
+      <label>City</label>
+      <input type="text" formControlName="city" >
+    </div>
+
+    <div class="form_control">
+      <label>Postal Code</label>
+      <input type="text"  formControlName="postalcode">
+      <div class="error">
+        <div *ngIf="userform.controls['address'].controls['postalcode'].hasError('pattern')" >Please enter valid postal code   </div>
+      </div>
+    </div>
+
+</div>
+
+<div class="form_control">
+  <button [disabled]="!userform.valid" >Submit</button>
+
+<pre>
+  {{formData | json}}
+</pre>
+</div>
+</form>
+
+</div>

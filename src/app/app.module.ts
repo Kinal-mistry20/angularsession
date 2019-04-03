@@ -17,7 +17,8 @@ import { PipeComponent } from './pipe/pipe.component';
 import { SquareRootPipe } from './pipes/square-root.pipe';
 import { MultiplyPipe } from './pipes/multiply.pipe';
 import { FormComponent } from './form/form.component'
-import{FormsModule} from '@angular/forms'
+import{FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
 
 
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'animation', component: AnimationComponent,  },
   { path: 'pipe', component: PipeComponent,  },
   { path: 'form', component: FormComponent,  },
+  { path: 'reactive-form', component: ReactiveFormComponent,  },
   
 
 
@@ -60,14 +62,16 @@ const appRoutes: Routes = [
     PipeComponent,
     SquareRootPipe,
     MultiplyPipe,
-    FormComponent
+    FormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
      RouterModule.forRoot(appRoutes),
-     FormsModule
+     FormsModule,
+     ReactiveFormsModule
 
   ],
   providers: [colors, chartColor],

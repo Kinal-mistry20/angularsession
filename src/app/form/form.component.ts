@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  submitFormData : any
+
   getData(data){
     console.log(data)
+  }
+
+  onSubmit(FormData){
+   this.submitFormData = FormData
+   //console.log(FormData)
   }
 
   constructor() { }
