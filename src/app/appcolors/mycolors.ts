@@ -7,7 +7,7 @@ export class colors {
     cyan : string = "#64cfda";
     lightMaroon : string = "#e09670"; 
     lightPurple : string = "#ac85be"; 
-  
+    red: string = 'red';
   }
 
   export class chartColor {

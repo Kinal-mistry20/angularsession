@@ -18,7 +18,14 @@ import { SquareRootPipe } from './pipes/square-root.pipe';
 import { MultiplyPipe } from './pipes/multiply.pipe';
 import { FormComponent } from './form/form.component'
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component'
+import{EmployeesService} from './employees.service';
+import { HighchartsComponent } from './highcharts/highcharts.component';
+import { DirectiveComponent } from './directive/directive.component'
+import { HighchartsChartModule } from 'highcharts-angular';
+import { MybuttonDirective } from './mybutton.directive';
 
 
 const appRoutes: Routes = [
@@ -41,6 +48,10 @@ const appRoutes: Routes = [
   { path: 'pipe', component: PipeComponent,  },
   { path: 'form', component: FormComponent,  },
   { path: 'reactive-form', component: ReactiveFormComponent,  },
+  { path: 'employee-list', component: EmployeeListComponent,  },
+  { path: 'employee-details', component: EmployeeDetailsComponent,  },
+  { path: 'hightchart', component: HighchartsComponent,  },
+  { path: 'directives', component: DirectiveComponent,  },
   
 
 
@@ -63,7 +74,12 @@ const appRoutes: Routes = [
     SquareRootPipe,
     MultiplyPipe,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    EmployeeListComponent,
+    EmployeeDetailsComponent,
+    HighchartsComponent,
+    DirectiveComponent,
+    MybuttonDirective
   ],
   imports: [
     BrowserModule,
@@ -71,10 +87,11 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
      RouterModule.forRoot(appRoutes),
      FormsModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     HighchartsChartModule
 
   ],
-  providers: [colors, chartColor],
+  providers: [colors, chartColor,EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

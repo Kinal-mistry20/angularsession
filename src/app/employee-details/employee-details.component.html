@@ -1,0 +1,6 @@
+<button [routerLink]="['/employee-list']" routerLinkActive="router-link-active" >List</button>
+<ul>
+  <li *ngFor="let employee of employees">
+    {{employee.id}} - {{employee.name}} - {{employee.age}},
+  </li>
+</ul>
