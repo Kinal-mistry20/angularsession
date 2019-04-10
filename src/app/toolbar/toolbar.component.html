@@ -1,0 +1,52 @@
+<div  [ngClass]="mytheme">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+ 
+      
+      <a mat-list-item  routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+      <a mat-list-item  routerLink="/about" routerLinkActive="active"  >About</a>
+      <a mat-list-item  routerLink="/about/team" routerLinkActive="active"  >Team</a>
+      <a mat-list-item  routerLink="/services" routerLinkActive="active"  >Services</a>
+      <a mat-list-item  routerLink="/services/seo" routerLinkActive="active"  >SEO</a>
+      <a mat-list-item  routerLink="/services/ppc" routerLinkActive="active"  >PPC</a>
+      <a mat-list-item  routerLink="/animation" routerLinkActive="active"  >Animation</a>
+      <a mat-list-item  routerLink="/pipe" routerLinkActive="active"  >Pipe</a>
+      <a mat-list-item  routerLink="/form" routerLinkActive="active"  >Form</a>
+      <a mat-list-item  routerLink="/reactive-form" routerLinkActive="active"  >Reactive Form</a>
+      <a mat-list-item  routerLink="/employee-list" routerLinkActive="active"  > Employee List</a>
+      <a mat-list-item  routerLink="/hightchart" routerLinkActive="active"  > Hightchart</a>
+      <a mat-list-item  routerLink="/directives" routerLinkActive="active"  > Directives</a>
+      <a mat-list-item  routerLink="/material" routerLinkActive="active"  > Material</a>
+  
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>my-project</span>
+      <div style="width: 100%; text-align: right">
+      <button (click)="switchTheme('')" mat-button>Light</button>
+      <button (click)="switchTheme('dark-theme')" mat-button>Dark</button>
+      <button (click)="switchTheme('green-theme')" mat-button>Green</button>
+    </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>

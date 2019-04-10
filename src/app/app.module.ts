@@ -17,16 +17,19 @@ import { PipeComponent } from './pipe/pipe.component';
 import { SquareRootPipe } from './pipes/square-root.pipe';
 import { MultiplyPipe } from './pipes/multiply.pipe';
 import { FormComponent } from './form/form.component'
-import{FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component'
-import{EmployeesService} from './employees.service';
+import { EmployeesService} from './employees.service';
 import { HighchartsComponent } from './highcharts/highcharts.component';
 import { DirectiveComponent } from './directive/directive.component'
 import { HighchartsChartModule } from 'highcharts-angular';
 import { MybuttonDirective } from './mybutton.directive';
-
+import {MatButtonModule, MatCheckboxModule,MatSelectModule,MatInputModule, MatIconModule, MatFormFieldModule, MatToolbarModule, MatSidenavModule, MatListModule} from '@angular/material';
+import { MaterialComponent } from './material/material.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent,  },
@@ -52,6 +55,8 @@ const appRoutes: Routes = [
   { path: 'employee-details', component: EmployeeDetailsComponent,  },
   { path: 'hightchart', component: HighchartsComponent,  },
   { path: 'directives', component: DirectiveComponent,  },
+  { path: 'material', component: MaterialComponent,  },
+
   
 
 
@@ -79,7 +84,9 @@ const appRoutes: Routes = [
     EmployeeDetailsComponent,
     HighchartsComponent,
     DirectiveComponent,
-    MybuttonDirective
+    MybuttonDirective,
+    MaterialComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +95,8 @@ const appRoutes: Routes = [
      RouterModule.forRoot(appRoutes),
      FormsModule,
      ReactiveFormsModule,
-     HighchartsChartModule
+     HighchartsChartModule,
+     MatButtonModule, MatCheckboxModule, MatIconModule, MatFormFieldModule, MatSelectModule,MatInputModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatListModule
 
   ],
   providers: [colors, chartColor,EmployeesService],
